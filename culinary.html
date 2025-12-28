@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Furak - Culinary Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a62121", // Tais Red
+                        "accent": "#D4AF37", // Golden Kaebauk
+                        "neutral-dark": "#2D2D2D", // Earth Charcoal
+                        "neutral-light": "#856666",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#201212",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "card": "0px 4px 8px rgba(0, 0, 0, 0.05), 0px 1px 3px rgba(0, 0, 0, 0.1)",
+                        "card-hover": "0px 10px 20px rgba(166, 33, 33, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Subtle Tais-inspired geometric pattern */
+        .tais-bg-pattern {
+            background-color: #f8f6f6;
+            background-image: 
+                linear-gradient(45deg, #d4af3708 25%, transparent 25%, transparent 75%, #d4af3708 75%, #d4af3708),
+                linear-gradient(45deg, #d4af3708 25%, transparent 25%, transparent 75%, #d4af3708 75%, #d4af3708);
+            background-position: 0 0, 20px 20px;
+            background-size: 40px 40px;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="tais-bg-pattern font-display text-neutral-dark antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#f4f1f1] dark:border-white/10 transition-colors duration-300">
+<div class="layout-container flex justify-center w-full">
+<div class="flex items-center justify-between w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
+<div class="flex items-center gap-2 sm:gap-3">
+<div class="size-7 sm:size-8 text-primary">
+<span class="material-symbols-outlined text-2xl sm:text-3xl">wb_sunny</span>
+</div>
+<h2 class="text-charcoal dark:text-white text-lg sm:text-xl font-bold leading-tight tracking-tight">Furak</h2>
+</div>
+<!-- Desktop & Tablet Nav -->
+<div class="hidden lg:flex flex-1 justify-center gap-6 xl:gap-12">
+<a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="index.html">Home</a>
+<a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="about.html">About</a>
+<a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="culinary.html">Culinary</a>
+<a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="destination.html">Tourism</a>
+</div>
+<!-- Mobile & Tablet Menu Button -->
+<button id="menu-toggle" class="lg:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-charcoal dark:text-white text-xl sm:text-2xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile & Tablet Dropdown Menu -->
+<div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f4f1f1] dark:border-white/10 transform -translate-y-full opacity-0 invisible transition-all duration-300 shadow-lg">
+<div class="px-4 sm:px-6 py-4 sm:py-6 space-y-2">
+<a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="index.html">Home</a>
+<a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="about.html">About</a>
+<a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="culinary.html">Culinary</a>
+<a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="destination.html">Tourism</a>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full">
+<!-- Hero Section -->
+<div class="relative w-full px-4 sm:px-6 lg:px-40 py-6 lg:py-10">
+<div class="mx-auto max-w-[1280px]">
+<div class="relative flex min-h-[500px] flex-col items-center justify-center overflow-hidden rounded-2xl sm:rounded-[2.5rem] p-8 text-center shadow-lg" data-alt="Close up of a traditional Timorese feast with vibrant dishes" style='background-image: linear-gradient(rgba(32, 18, 18, 0.4) 0%, rgba(32, 18, 18, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQiSJbQ1s4Q89LU-3FPeNf3F3cpWOHOTyGMfsP8QOqhIxP7eloBJGxhjJHPl3BhXRyx1axExI_4Ht6zcYyIZOPtRe-dAQ4cKvaJDm0zITOZSHFawJdSMd1anaYuRp8WvoAZZgyxA0Chk8Dhw3haqh7HfaUbFH12umj0OTRJnrOrcRUYcUScOUCEAHdUlJPueYsM39blQLx4r1tZYmkiG_Y-qrmbNb-nbgjzQqN1Ip5oDkfdqf-c4U7kUz1bu6-LG0R3vRU0TPC9YnM"); background-size: cover; background-position: center;'>
+<!-- Decorative Kaebauk accent -->
+<div class="mb-4 flex justify-center opacity-80">
+<span class="material-symbols-outlined text-accent text-5xl" style="font-variation-settings: 'FILL' 1, 'wght' 200;">wb_twilight</span>
+</div>
+<h1 class="text-white text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight max-w-4xl drop-shadow-md mb-4">
+                        Taste the Soul of <span class="text-accent">Timor-Leste</span>
+</h1>
+<p class="text-gray-100 text-lg sm:text-xl font-medium max-w-2xl mb-10 drop-shadow-sm">
+                        Discover the rich flavors of Saboko, Tukir, and other traditional delights that define our communal spirit.
+                    </p>
+
+</div>
+</div>
+<!-- Categories / Chips -->
+<div class="w-full px-4 sm:px-6 lg:px-40 pb-6">
+<div class="mx-auto max-w-[1280px]">
+<div class="flex gap-3 overflow-x-auto py-4 hide-scrollbar">
+
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="w-full px-4 sm:px-6 lg:px-40 pt-2">
+<div class="mx-auto max-w-[1280px] border-b border-gray-200 pb-4 flex items-end justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<div class="h-1 w-8 bg-accent rounded-full"></div>
+<span class="text-accent text-xs font-bold uppercase tracking-widest">Culinary Heritage</span>
+</div>
+<h2 class="text-neutral-dark text-3xl font-bold tracking-tight">Local Delicacies</h2>
+</div>
+
+</div>
+</div>
+<!-- Dish Grid -->
+<div class="w-full px-4 sm:px-6 lg:px-40 py-8">
+<div class="mx-auto max-w-[1280px]">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+<!-- Card 1: Saboko -->
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Chef's Choice</div>
+<img alt="Saboko fish grilled in palm leaves" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5yCRqAmpJBxUlhhHnUcGQ99R8bOdrHpdbDX5Z4yBPOs56-BIXGNIt5E8hm2nPxest9Pfy5l9BC8j4NRib0Sm6FRQ8mVyUthgqq4ICAHZOdutNgESNE4myrhd6ZaBNTnnGz5-7vpPUpuJqR_oJmFkuvuoDsOxi8Z9PKFnU4uTlVMsNMtdqAyg7-ux2ZAcv7HWd5wHJcg4IknEUwNNCUkoz9SDVgZaqLetR4-2_n0bp88nN5G1RzNxyItQeF13uv2LJtAYZEAZtE3v"/>
+<!-- Overlay gradient for text readability if needed -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="flex flex-col gap-2 p-3 pt-4">
+<div class="flex justify-between items-start">
+<h3 class="text-neutral-dark text-xl font-bold leading-tight group-hover:text-primary transition-colors">Saboko</h3>
+<div class="flex items-center gap-0.5 text-accent text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    4.9
+                                </div>
+</div>
+<p class="text-neutral-light text-sm line-clamp-2">Fresh fish marinated in tamarind and spices, grilled to perfection inside palm leaves.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-semibold text-neutral-light bg-background-light px-3 py-1.5 rounded-lg">25 mins</span>
+
+</div>
+</div>
+</div>
+<!-- Card 2: Tukir -->
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
+<img alt="Tukir meat cooked in bamboo" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/tukir.jpg"/>
+</div>
+<div class="flex flex-col gap-2 p-3 pt-4">
+<div class="flex justify-between items-start">
+<h3 class="text-neutral-dark text-xl font-bold leading-tight group-hover:text-primary transition-colors">Tukir</h3>
+<div class="flex items-center gap-0.5 text-accent text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    4.8
+                                </div>
+</div>
+<p class="text-neutral-light text-sm line-clamp-2">A ceremonial dish of marinated meat slow-cooked with spices inside bamboo stalks.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-semibold text-neutral-light bg-background-light px-3 py-1.5 rounded-lg">4 hrs</span>
+
+</div>
+</div>
+</div>
+<!-- Card 3: Batar Da'an -->
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur-md text-green-700 text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">eco</span> Veg
+                            </div>
+<img alt="Batar Da'an corn stew" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtTgmHKtafVUxeoGdAQqT6ComyfuWxjvlGwChShTe9vOxgVjUN8ubMzpq9nhgaPXaJzPsPhFLFv9OsGPyQQYjo7tkEj0B5uVvz_qmW05MLyovTlT7pQxTKOUqwwMDHhBJAIoxr1uQEc-a2fjQlUov2WqKsg4AWv2U-J_naDmOkeowJbCbGJPSI0bZbQwmvPad4XM5SBEP06pTBnCdf50fb6EdS0ygwWIyyrToQZYHNJ8f1h7iOoN3Bvw4tQxoub6F_o-gR01JM0Iyi"/>
+</div>
+<div class="flex flex-col gap-2 p-3 pt-4">
+<div class="flex justify-between items-start">
+<h3 class="text-neutral-dark text-xl font-bold leading-tight group-hover:text-primary transition-colors">Batar Da'an</h3>
+<div class="flex items-center gap-0.5 text-accent text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    4.7
+                                </div>
+</div>
+<p class="text-neutral-light text-sm line-clamp-2">A hearty and comforting stew made from corn, mung beans, and pumpkin.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-semibold text-neutral-light bg-background-light px-3 py-1.5 rounded-lg">45 mins</span>
+
+</div>
+</div>
+</div>
+<!-- Card 4: Ikan Pepes -->
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<img alt="Ikan Pepes steamed fish" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKH5nG3HcPJ_3zV-L3oXtEAUDfTENY99-VUiHgx6b-X3aZa3Z3Z8aepqH-0s0ebrCdztJ1gDHpPL4ME3lc8HDcMrOtrJsm29TLjnT4kGlHJNeM6ZU3ACJDSPhfNNo11ASkZqzmHTiMJJ39b3x9k9xF4ZECAQP8KJoR8uP3lIWMs5N6Ul0UlGFrGzRgRzpXK5luedZJZzKdGqkMUYVs_XrsNiQj4Xs_faUmwJ5PyB6eMDQzFqdQ4oWaRm3GSUa-W0y2gcW0JY_tdge9"/>
+</div>
+<div class="flex flex-col gap-2 p-3 pt-4">
+<div class="flex justify-between items-start">
+<h3 class="text-neutral-dark text-xl font-bold leading-tight group-hover:text-primary transition-colors">Ikan Pepes</h3>
+<div class="flex items-center gap-0.5 text-accent text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    4.6
+                                </div>
+</div>
+<p class="text-neutral-light text-sm line-clamp-2">Spiced fish wrapped tightly in banana leaf and steamed to lock in the aroma.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-semibold text-neutral-light bg-background-light px-3 py-1.5 rounded-lg">30 mins</span>
+
+</div>
+</div>
+</div>
+<!-- Card 5: Kulu -->
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur-md text-pink-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">icecream</span> Sweet
+                            </div>
+<img alt="Breadfruit based dessert dish" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/kulu.jpg"/>
+</div>
+<div class="flex flex-col gap-2 p-3 pt-4">
+<div class="flex justify-between items-start">
+<h3 class="text-neutral-dark text-xl font-bold leading-tight group-hover:text-primary transition-colors">Kulu</h3>
+<div class="flex items-center gap-0.5 text-accent text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    4.5
+                                </div>
+</div>
+<p class="text-neutral-light text-sm line-clamp-2">Sweet breadfruit prepared in coconut milk, a delightful tropical dessert.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-semibold text-neutral-light bg-background-light px-3 py-1.5 rounded-lg">15 mins</span>
+<!-- <button class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button> -->
+</div>
+</div>
+</div>
+<!-- Card 6: Midar Sin -->
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
+<div class="absolute top-3 left-3 z-10 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Popular</div>
+<img alt="Sweet and sour pork dish" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/midar-siin.jpg"/>
+</div>
+<div class="flex flex-col gap-2 p-3 pt-4">
+<div class="flex justify-between items-start">
+<h3 class="text-neutral-dark text-xl font-bold leading-tight group-hover:text-primary transition-colors">Midar Sin</h3>
+<div class="flex items-center gap-0.5 text-accent text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    4.8
+                                </div>
+</div>
+<p class="text-neutral-light text-sm line-clamp-2">Timorese style sweet and sour pork, featuring local fruits for acidity.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-xs font-semibold text-neutral-light bg-background-light px-3 py-1.5 rounded-lg">35 mins</span>
+<!-- <button class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button> -->
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<!-- <button class="flex h-12 items-center justify-center rounded-full border border-gray-200 bg-white px-8 text-neutral-dark font-bold shadow-sm hover:border-primary hover:text-primary transition-colors">
+                        Load More Dishes
+                    </button> -->
+</div>
+</div>
+</div>
+<!-- Cultural Context -->
+<div class="w-full px-4 sm:px-6 lg:px-40 py-12 lg:py-20 bg-white relative overflow-hidden mt-8">
+<!-- Background element -->
+<div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-background-light to-transparent opacity-50 pointer-events-none hidden lg:block"></div>
+<div class="mx-auto max-w-[960px] relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<span class="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">Our Culture</span>
+<h2 class="text-3xl lg:text-4xl font-black text-neutral-dark mb-6 leading-tight">More Than Just Food,<br/>It's a Connection.</h2>
+<p class="text-neutral-light text-lg mb-8 leading-relaxed">
+                        In Timor-Leste, dining is a communal act that strengthens bonds. Sharing a meal like <span class="text-primary font-bold">Tukir</span> or <span class="text-primary font-bold">Batar Da'an</span> is about celebrating togetherness, honoring guests, and preserving the stories of our ancestors through taste.
+                    </p>
+<!-- <a class="inline-flex items-center gap-2 text-primary font-bold hover:underline" href="#">
+                        Read about our dining etiquette 
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</a> -->
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-square rounded-[3rem] overflow-hidden rotate-3 hover:rotate-0 transition-all duration-500 shadow-xl border-4 border-white" data-alt="Close up of hands sharing a meal on a wooden table" style='background-image: url("assets/rempah-rempah\ tukir.jpg"); background-size: cover; background-position: center;'></div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -left-6 size-24 bg-accent/10 rounded-full blur-2xl -z-10"></div>
+<div class="absolute -top-6 -right-6 size-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-gray-200 bg-white px-6 py-12 lg:px-40">
+<div class="mx-auto max-w-[1280px] flex flex-col items-center gap-8">
+<!-- Logo Mark -->
+
+<p class="text-neutral-light text-sm mt-4 text-center">
+                © 2024 Furak. Celebrating the spirit of Timor-Leste.
+            </p>
+</div>
+</footer>
+</div>
+</body></html>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuToggle.querySelector('.material-symbols-outlined');
+    
+    let isMenuOpen = false;
+    
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'invisible');
+            mobileMenu.classList.add('translate-y-0', 'opacity-100', 'visible');
+            menuIcon.textContent = 'close';
+        } else {
+            mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
+            mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'visible');
+            menuIcon.textContent = 'menu';
+        }
+    }
+    
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && !menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            toggleMenu();
+        }
+    });
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024 && isMenuOpen) {
+            toggleMenu();
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) {
+            toggleMenu();
+        }
+    });
+</script>
