@@ -2,10 +2,12 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Furak - History of Timor-Leste</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<title>Furak - The Soul of Timor-Leste</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -14,32 +16,45 @@
                     colors: {
                         "primary": "#a62121", // Tais Red
                         "secondary": "#D4AF37", // Golden Kaebauk
-                        "neutral-dark": "#2D2D2D", // Earth Charcoal
-                        "background-light": "#fcfcfc",
-                        "background-dark": "#1a1212",
-                        "surface-light": "#ffffff",
-                        "surface-dark": "#2b2121",
+                        "charcoal": "#2D2D2D", // Earth Charcoal
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#201212",
                     },
                     fontFamily: {
                         "display": ["Plus Jakarta Sans", "sans-serif"]
                     },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
                     backgroundImage: {
-                        'tais-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a62121' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 20L20 0H40L20 20H0zM20 40L40 20H20L0 40H20z'/%3E%3C/g%3E%3C/svg%3E\")",
+                        'tais-pattern': "repeating-linear-gradient(45deg, rgba(166, 33, 33, 0.05) 0px, rgba(166, 33, 33, 0.05) 2px, transparent 2px, transparent 12px), repeating-linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0px, rgba(212, 175, 55, 0.05) 2px, transparent 2px, transparent 12px)"
                     }
                 },
             },
         }
     </script>
 <style>
-        .kaebauk-mask {
-            mask-image: radial-gradient(circle at 50% 100%, transparent 45%, black 46%);
-            -webkit-mask-image: radial-gradient(circle at 50% 120%, transparent 45%, black 46%);
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }::-webkit-scrollbar {
+            width: 8px;
         }
-        .kaebauk-shape-top {
-             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
         }
-        .kaebauk-shape-bottom {
-             border-radius: 0 0 50% 50% / 0 0 100% 100%;
+        ::-webkit-scrollbar-thumb {
+            background: #ccc; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a62121; 
+        }
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -75,158 +90,262 @@
 </div>
 </div>
 </header>
-<div class="relative flex min-h-screen w-full flex-col">
-<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-10 py-12 flex flex-col lg:flex-row gap-12 relative">
-<aside class="hidden lg:flex w-64 flex-col gap-8 sticky top-28 h-fit z-30">
-<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
-<h3 class="text-neutral-dark dark:text-white font-bold text-lg mb-1">Timeline</h3>
-<p class="text-gray-500 text-sm mb-6">Jump to era</p>
-<nav class="flex flex-col gap-2 relative">
-<div class="absolute left-[19px] top-4 bottom-4 w-0.5 bg-gray-200 dark:bg-gray-700 -z-10"></div>
-<a class="flex items-center gap-4 p-2 rounded-xl bg-primary/10 transition-all group" href="#intro">
-<div class="size-2.5 rounded-full bg-primary ring-4 ring-primary/20"></div>
-<span class="text-primary font-bold text-sm">Introduction</span>
-</a>
-<a class="flex items-center gap-4 p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all group" href="#portuguese">
-<div class="size-2.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-primary transition-colors"></div>
-<span class="text-gray-600 dark:text-gray-400 group-hover:text-primary text-sm font-medium">1515: Colonial Era</span>
-</a>
-<a class="flex items-center gap-4 p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all group" href="#resistance">
-<div class="size-2.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-primary transition-colors"></div>
-<span class="text-gray-600 dark:text-gray-400 group-hover:text-primary text-sm font-medium">1975: The Struggle</span>
-</a>
-<a class="flex items-center gap-4 p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all group" href="#independence">
-<div class="size-2.5 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-primary transition-colors"></div>
-<span class="text-gray-600 dark:text-gray-400 group-hover:text-primary text-sm font-medium">2002: Independence</span>
-</a>
-</nav>
-</div>
-<div class="bg-primary p-6 rounded-3xl text-white relative overflow-hidden group cursor-pointer">
-<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-30 transition-opacity">
-<span class="material-symbols-outlined text-6xl">map</span>
-</div>
-<h3 class="font-bold text-lg mb-2 relative z-10">Interactive Map</h3>
-<p class="text-sm text-white/80 mb-4 relative z-10">Explore historical sites geographically.</p>
-<button class="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold relative z-10">Open Map</button>
-</div>
-</aside>
-<div class="flex-1 flex flex-col max-w-4xl mx-auto">
-<section class="mb-20 scroll-mt-32" id="intro">
-<div class="bg-tais-pattern bg-repeat opacity-30 w-full h-8 mb-4"></div>
-<h1 class="text-4xl md:text-5xl font-bold text-neutral-dark dark:text-white mb-6 leading-tight">
-                        A Legacy of <span class="text-primary">Resilience</span>
-</h1>
-<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 border-l-4 border-secondary pl-6">
-                        Timor-Leste's story is one of endurance. From the arrival of Portuguese explorers to the rugged resistance in the mountains, the spirit of the people remains unbroken like the <i>Kaebauk</i>—a symbol of power and authority that curves like the crescent moon.
-                    </p>
-<div class="aspect-video rounded-3xl overflow-hidden shadow-xl relative group">
-<img alt="Traditional Tais weaving cloth close up" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of traditional Tais textile weaving pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANvAbwXpJmautVZj7PfD_-7vQdPUCnUVmn9AGtUHyHOnEfwth3-nUphIf-7QvyiQX68nGQsQojjvxA7vRNenTAlZS_LULCaA7BdqIl989Qmbd5mSjeLvnOgyf-JxDEn1V3n69AoOH502w9-HNTmS2kRA8Og1fA32CPS_imNP-b-5o1waE_IVP_-VtQi0QsttJlPYjsRmFRa9t4fiuB-4eQr95PBXbFXvB1eXsDSaGFrYJMWEwA5UBnR-2rLJH10myc9-XaBoDDibRs"/>
-<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-<p class="text-white font-medium">Traditional Tais weaving carries the stories of generations.</p>
-</div>
-</div>
-</section>
-<div class="relative pl-0 md:pl-8 border-l-0 md:border-l-2 border-primary/20 space-y-24">
-<section class="relative group scroll-mt-32" id="portuguese">
-<div class="hidden md:flex absolute -left-[41px] top-0 size-5 bg-background-light dark:bg-background-dark border-4 border-secondary rounded-full z-10"></div>
-<div class="flex flex-col gap-6">
-<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-<span class="text-6xl font-black text-primary/10 absolute -top-12 -left-4 -z-10 select-none">1515</span>
-<h3 class="text-3xl font-bold text-primary">1515 — 1975</h3>
-<h4 class="text-xl font-medium text-gray-500 dark:text-gray-400">The Portuguese Era</h4>
-</div>
-<div class="bg-surface-light dark:bg-surface-dark rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<div class="space-y-4">
-<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                            Portuguese explorers arrived in the 16th century, seeking sandalwood. For over 400 years, their influence shaped the architecture, religion, and the introduction of coffee cultivation which remains a vital part of the economy today.
-                                        </p>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold">Coffee Trade</span>
-<span class="px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold">Architecture</span>
-<span class="px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold">Catholicism</span>
-</div>
-</div>
-<div class="relative h-64 rounded-2xl overflow-hidden">
-<img alt="Old colonial architecture style building" class="w-full h-full object-cover" data-alt="Colonial style architecture with white walls and arches" src="assets/tutuala.jpg"/>
-<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="relative group scroll-mt-32" id="resistance">
-<div class="hidden md:flex absolute -left-[41px] top-0 size-5 bg-background-light dark:bg-background-dark border-4 border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(166,33,33,0.2)]"></div>
-<div class="flex flex-col gap-6">
-<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-<span class="text-6xl font-black text-primary/10 absolute -top-12 -left-4 -z-10 select-none">1975</span>
-<h3 class="text-3xl font-bold text-primary">1975 — 1999</h3>
-<h4 class="text-xl font-medium text-gray-500 dark:text-gray-400">The Struggle &amp; Resistance</h4>
-</div>
-<div class="relative rounded-3xl overflow-hidden bg-neutral-dark text-white p-8 md:p-12">
+<main class="flex-1 pt-[72px]">
+<section class="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Forest landscape representing the hiding places of resistance" class="w-full h-full object-cover opacity-20 grayscale" data-alt="Dense forest landscape with mist representing resistance hideouts" src="assets/invasion.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-r from-neutral-dark via-neutral-dark/90 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-background-light dark:to-background-dark z-10"></div>
+<div class="h-full w-full bg-cover bg-center bg-no-repeat transform scale-105" data-alt="Cinematic view of Mount Ramelau at sunrise with clouds rolling over the peaks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbwJhhOaE2_9TDJO7Qz9tCUiCZru1fWG1zxUQ93KZnIIR5GHJefYUfm9KOD58Bj9EGAMnNWblwOkp5CX0eG3hxQhZW7kjo98rvOVQKNz7V00nXsBl8qvVbkjFezFnv9uvIuL5HtJ81534TeT3v3RSflqlkWdiRf0IMrNzsxoaMKcgo385C24U9hwDdvtlWIYkbexA8VljvGbymukE9uofvSbU357g6BfEfp2Ml7t0EttHP7CTGHo2w8r9SxgXlbtTkoYPnwwTbCBOa");'>
 </div>
-<div class="relative z-10 max-w-2xl">
-<span class="material-symbols-outlined text-secondary text-4xl mb-4">star</span>
-<blockquote class="text-2xl font-serif italic leading-relaxed mb-6 text-white/90">
-                                        "To resist is to win."
-                                    </blockquote>
-<p class="text-gray-300 mb-6 leading-relaxed">
-                                        Following the Carnation Revolution in Portugal, Timor-Leste declared independence, only to be occupied shortly after. The Falintil resistance forces retreated to the mountains, beginning a 24-year struggle for sovereignty.
-                                    </p>
-<!-- <button class="flex items-center gap-2 text-secondary font-bold hover:text-white transition-colors">
-<span>Read the stories of heroes</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button> -->
+<div class="absolute inset-0 bg-tais-pattern opacity-30 mix-blend-overlay z-0 pointer-events-none"></div>
 </div>
+<div class="relative z-20 layout-container flex flex-col items-center justify-center px-4 md:px-10 max-w-7xl mx-auto text-center mt-[-4rem]">
+<div class="flex flex-col gap-6 max-w-4xl animate-fade-in-up">
+<div class="flex items-center justify-center gap-2 mb-2">
+<svg class="opacity-80" fill="none" height="15" viewBox="0 0 60 15" width="60">
+<path d="M0 15C10 5 25 0 30 0C35 0 50 5 60 15" stroke="#D4AF37" stroke-width="2"></path>
+</svg>
+<span class="text-secondary font-bold tracking-widest text-sm uppercase bg-black/40 backdrop-blur-sm px-4 py-1 rounded-full border border-secondary/30">Welcome to Timor-Leste</span>
+<svg class="opacity-80" fill="none" height="15" viewBox="0 0 60 15" width="60">
+<path d="M0 15C10 5 25 0 30 0C35 0 50 5 60 15" stroke="#D4AF37" stroke-width="2"></path>
+</svg>
 </div>
-</div>
-</section>
-<section class="relative group scroll-mt-32" id="independence">
-<div class="hidden md:flex absolute -left-[41px] top-0 size-5 bg-background-light dark:bg-background-dark border-4 border-secondary rounded-full z-10"></div>
-<div class="flex flex-col gap-6">
-<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-<span class="text-6xl font-black text-primary/10 absolute -top-12 -left-4 -z-10 select-none">2002</span>
-<h3 class="text-3xl font-bold text-primary">2002 — Present</h3>
-<h4 class="text-xl font-medium text-gray-500 dark:text-gray-400">Restoration of Independence</h4>
-</div>
-<div class="bg-surface-light dark:bg-surface-dark rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-800">
-<div class="flex flex-col md:flex-row gap-8">
-<div class="md:w-1/2">
-<img alt="Happy children in Timor-Leste" class="w-full h-64 object-cover rounded-2xl mb-4" data-alt="Children smiling and playing outdoors in Timor-Leste" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDorVl88v9Y1RX_uqRDRNpCwwK2vTk9w8cBn1CwKrUADAUVgcjdz-Wc0xJrouoLj_5wmKKKdr7_i68YeIfKfFJRMdZLK9BnHXXLkAX2qq8oWv1YldYEjOPWH6OPT3v47WvpW-2aBCzPu9JNILk3xrUT8sFVHV5R2-C62UDnNBYnBXOfBs3NryHhFvR1U-NX8QTifNE5Iyt4JZc14cnlzEeZA8xbHKUwrJ9HpkyGcwhBu669Rk4RE1ohlfbj2cX213RWzEkgZtaiqjhQ"/>
-<div class="flex justify-between items-center text-xs text-gray-500 uppercase tracking-widest font-bold">
-<span>May 20, 2002</span>
-<span>Republic Established</span>
-</div>
-</div>
-<div class="md:w-1/2 flex flex-col justify-center">
-<h5 class="text-xl font-bold mb-3 text-neutral-dark dark:text-white">A New Dawn</h5>
-<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                                            Timor-Leste became the first new sovereign state of the 21st century. Today, the nation builds its future while honoring its past, focusing on reconciliation, development, and sharing its unique culture with the world.
-                                        </p>
-<div class="p-4 bg-secondary/10 rounded-xl border border-secondary/20 flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary">light_mode</span>
-<p class="text-sm text-neutral-dark dark:text-gray-200">
-<strong>Did you know?</strong><br/>
-                                                "Timor" comes from the Malay word for "East", and "Leste" is the Portuguese word for "East". The country's name literally means "East-East".
-                                            </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+<h1 class="text-white text-5xl md:text-8xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
+                        Furak<span class="text-primary"></span>
+</h1>
+<h2 class="text-gray-100 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                        Discover the untold stories, authentic flavors, and breathtaking landscapes of <span class="text-secondary font-medium">The Rising Sun</span>.
+                    </h2>
+<div class="flex flex-wrap gap-4 justify-center mt-6">
+<button class="flex items-center justify-center h-14 px-8 rounded-full bg-primary hover:bg-red-700 text-white text-base font-bold tracking-wide transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-0.5">
+<span>Start Your Journey</span>
+<span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</button>
 
 </div>
-</div></main>
+</div>
+</div>
+</section>
+<div class="relative z-30 -mt-20 px-4 md:px-10 w-full max-w-7xl mx-auto">
+<div class="w-full bg-white dark:bg-[#1f1f1f] rounded-3xl shadow-2xl border border-gray-100 dark:border-white/5 p-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-50"></div>
+<div class="flex flex-col gap-2 items-center text-center border-b md:border-b-0 md:border-r border-gray-100 dark:border-white/10 pb-6 md:pb-0 md:pr-6">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">landscape</span>
+<h3 class="text-3xl font-bold text-charcoal dark:text-white">50+</h3>
+<p class="text-gray-500 text-sm uppercase tracking-wide font-medium">Pristine Destinations</p>
+</div>
+<div class="flex flex-col gap-2 items-center text-center border-b md:border-b-0 md:border-r border-gray-100 dark:border-white/10 pb-6 md:pb-0 md:pr-6">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">groups</span>
+<h3 class="text-3xl font-bold text-charcoal dark:text-white">10</h3>
+<p class="text-gray-500 text-sm uppercase tracking-wide font-medium">Local Guides</p>
+</div>
+<div class="flex flex-col gap-2 items-center text-center">
+<span class="material-symbols-outlined text-4xl text-charcoal dark:text-white mb-2">temple_buddhist</span>
+<h3 class="text-3xl font-bold text-charcoal dark:text-white">15+</h3>
+<p class="text-gray-500 text-sm uppercase tracking-wide font-medium">Cultural Festivals</p>
+</div>
+</div>
+</div>
+<section class="relative py-24 lg:py-32 bg-white dark:bg-[#1f1f1f] overflow-hidden" id="about">
+<div class="absolute inset-0 bg-tais-pattern opacity-10 pointer-events-none mix-blend-multiply dark:mix-blend-overlay"></div>
+<div class="relative z-10 layout-container max-w-7xl mx-auto px-4 md:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="flex flex-col gap-4 items-start">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 flex items-center justify-center rounded-full bg-secondary/10">
+<svg class="w-6 h-6 text-secondary fill-current" viewBox="0 0 24 24">
+<path d="M12,5c-4,0-7,2-9,5c0,0,5-3,9-3s9,3,9,3C19,7,16,5,12,5z"></path>
+</svg>
+</div>
+<span class="text-secondary font-bold tracking-[0.2em] uppercase text-xs">Our Heritage</span>
+</div>
+<h2 class="text-4xl lg:text-6xl font-extrabold text-charcoal dark:text-white leading-tight">
+                            The Soul of <br/><span class="text-primary">Timor-Leste</span>
+</h2>
+</div>
+<div class="space-y-6">
+<p class="text-xl text-charcoal/80 dark:text-gray-200 font-medium leading-relaxed">
+                            From the misty peaks of <span class="text-primary">Mount Ramelau</span> to the sacred rhythms of the <span class="italic">Tebe-Tebe</span>, our nation's story is one of resilience and rebirth.
+                        </p>
+<p class="text-base text-gray-500 dark:text-gray-400 leading-relaxed font-light">
+                            Known as the "Rising Sun," Timor-Leste invites you to explore a cultural tapestry woven with threads of history, ancient traditions, and an unwavering spirit. Discover the warmth of our people and the sanctity of our <span class="italic">Uma Lulik</span>.
+                        </p>
+</div>
+<div class="pt-2 flex flex-wrap gap-4">
+<button onclick="window.location.href='about.html'" class="flex items-center justify-center h12 px-8 rounded-full bg-charcoal dark:bg-white text-white dark:text-charcoal font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+<span>Read Our History</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button onclick="window.location.href='about.html'" class="h-12 px-8 rounded-full border border-gray-200 dark:border-white/20 text-charcoal dark:text-white font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300">
+                            Cultural Gallery </button>
+</div>
+</div>
+<div class="relative order-1 lg:order-2 group">
+<div class="absolute -inset-4 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-[2.5rem] rotate-3 blur-md opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+<div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-gray-200 dark:bg-gray-800">
+<img alt="Timorese Culture and Tradition" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="assets/kaebauk-logo.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-0.5 w-6 bg-secondary"></span>
+<span class="text-secondary text-xs font-bold uppercase tracking-widest">Culture</span>
+</div>
+<p class="font-bold text-2xl">Weaving the Future</p>
+<p class="text-sm text-gray-300 mt-1">Honoring the past through Tais.</p>
+</div>
+</div>
+<div class="absolute -top-6 -right-6 hidden md:flex items-center justify-center w-24 h-24 bg-white dark:bg-[#252525] rounded-full shadow-lg border border-gray-100 dark:border-white/5 z-20">
+<svg class="w-12 h-12 text-secondary fill-current" viewBox="0 0 24 24">
+<path d="M12,4c-5,0-9,3-11,7c0,0,6-4,11-4s11,4,11,4C21,7,17,4,12,4z"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark border-t border-gray-100 dark:border-white/5" id="destinations">
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h3 class="text-3xl md:text-4xl font-bold text-charcoal dark:text-white mb-3">Highlights of the Land</h3>
+<p class="text-gray-500 text-lg">Journey through the iconic landscapes of the rising sun.</p>
+</div>
+<a class="text-primary font-bold hover:text-secondary transition-colors flex items-center gap-1" href="destination.html">
+                        View All Locations <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all">
+<img alt="Atauro Island" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/atauro.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<span class="text-white text-xs font-bold uppercase tracking-wider">Island</span>
+</div>
+<div class="absolute bottom-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<h4 class="text-white text-2xl font-bold mb-2">Atauro Island</h4>
+<div class="h-1 w-10 bg-secondary mb-4"></div>
+<p class="text-gray-300 text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                Home to the most biodiverse waters in the world. Swim with whales and dolphins in crystal clear seas.
+                            </p>
+
+</div>
+</div>
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all">
+<img alt="Mount Ramelau" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/image.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<span class="text-white text-xs font-bold uppercase tracking-wider">Mountain</span>
+</div>
+<div class="absolute bottom-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<h4 class="text-white text-2xl font-bold mb-2">Mt. Ramelau</h4>
+<div class="h-1 w-10 bg-secondary mb-4"></div>
+<p class="text-gray-300 text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                Stand atop Timor-Leste’s highest peak at sunrise for a spiritual view above the rolling clouds.
+                            </p>
+
+</div>
+</div>
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all">
+<img alt="Dili Coastal" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 object-bottom" src="assets/cristo-rei.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<span class="text-white text-xs font-bold uppercase tracking-wider">City</span>
+</div>
+<div class="absolute bottom-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<h4 class="text-white text-2xl font-bold mb-2">Dili &amp; Surroundings</h4>
+<div class="h-1 w-10 bg-secondary mb-4"></div>
+<p class="text-gray-300 text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                                Explore the capital's vibrant history, from the Cristo Rei statue to the historic Tais market.
+                            </p>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-24 bg-primary/5 dark:bg-[#251a1a] overflow-hidden" id="culinary">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-30"></div>
+<div class="absolute -right-20 top-40 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="w-full lg:w-1/2 relative group">
+<div class="aspect-square relative rounded-full border-[1px] border-dashed border-primary/30 p-6 animate-[spin_60s_linear_infinite]"></div>
+<div class="absolute inset-4 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-white/10">
+<img alt="Timorese Cuisine" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" src="assets/saboko.jpg"/>
+</div>
+<div class="absolute bottom-10 -right-4 md:right-10 bg-white dark:bg-charcoal px-6 py-4 rounded-xl shadow-xl flex items-center gap-4 animate-bounce-slow">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">restaurant_menu</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Featured Dish</p>
+<p class="font-bold text-charcoal dark:text-white">Ikan Sabuko</p>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex flex-col gap-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="h-px w-8 bg-secondary"></span>
+<span class="text-secondary font-bold uppercase tracking-wider text-sm">Timorese Flavors</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-extrabold text-charcoal dark:text-white mb-4">
+                                A Culinary Journey of <span class="text-primary">Spice &amp; Tradition</span>
+</h2>
+<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                                Discover a unique fusion of Portuguese influence and indigenous ingredients. From the aromatic earthy stews to the spicy kick of fresh chili pastes, every dish tells a story of the land and its people.
+                            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-start gap-4 p-4 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 hover:shadow-lg transition-all cursor-default group/dish">
+<div class="bg-background-light dark:bg-white/10 p-3 rounded-xl text-primary group-hover/dish:bg-primary group-hover/dish:text-white transition-colors">
+<span class="material-symbols-outlined">soup_kitchen</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-charcoal dark:text-white">Batar Da'an</h4>
+<p class="text-sm text-gray-500 mt-1">A hearty stew of corn, mung beans, and pumpkin.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 hover:shadow-lg transition-all cursor-default group/dish">
+<div class="bg-background-light dark:bg-white/10 p-3 rounded-xl text-primary group-hover/dish:bg-primary group-hover/dish:text-white transition-colors">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-charcoal dark:text-white">Ai Manas</h4>
+<p class="text-sm text-gray-500 mt-1">Traditional chili paste that brings the heat.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 hover:shadow-lg transition-all cursor-default group/dish">
+<div class="bg-background-light dark:bg-white/10 p-3 rounded-xl text-primary group-hover/dish:bg-primary group-hover/dish:text-white transition-colors">
+<span class="material-symbols-outlined">set_meal</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-charcoal dark:text-white">Ikan Pepes</h4>
+<p class="text-sm text-gray-500 mt-1">Fish marinated in spices &amp; steamed in banana leaf.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 hover:shadow-lg transition-all cursor-default group/dish">
+<div class="bg-background-light dark:bg-white/10 p-3 rounded-xl text-primary group-hover/dish:bg-primary group-hover/dish:text-white transition-colors">
+<span class="material-symbols-outlined">coffee</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-charcoal dark:text-white">Timor Coffee</h4>
+<p class="text-sm text-gray-500 mt-1">World-renowned organic Arabica beans.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+</main>
 <footer class="border-t border-gray-200 bg-white px-6 py-12 lg:px-40">
 <div class="mx-auto max-w-[1280px] flex flex-col items-center gap-8">
 <!-- Logo Mark -->
 
 <p class="text-neutral-light text-sm mt-4 text-center">
-                © 2024 Furak. Celebrating the spirit of Timor-Leste.
+                © 2025 Furak. Celebrating the spirit of Timor-Leste.
             </p>
 </div>
 </footer>
@@ -240,6 +359,7 @@
     
     let isMenuOpen = false;
     
+    // Toggle menu function
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
         
@@ -254,8 +374,10 @@
         }
     }
     
+    // Menu toggle click event
     menuToggle.addEventListener('click', toggleMenu);
     
+    // Close menu when clicking on links
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -265,18 +387,21 @@
         });
     });
     
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (isMenuOpen && !menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
             toggleMenu();
         }
     });
     
+    // Close menu on window resize if screen becomes large
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 1024 && isMenuOpen) {
             toggleMenu();
         }
     });
     
+    // Handle escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isMenuOpen) {
             toggleMenu();
