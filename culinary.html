@@ -59,6 +59,37 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        
+        /* Modal animations */
+        .modal-enter {
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        .modal-exit {
+            animation: modalFadeOut 0.3s ease-in;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes modalFadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+        }
     </style>
 </head>
 <body class="tais-bg-pattern font-display text-neutral-dark antialiased">
@@ -68,7 +99,7 @@
 <div class="layout-container flex justify-center w-full">
 <div class="flex items-center justify-between w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
 <a href="index.html" class="flex items-center gap-2 sm:gap-3">
-<img src="assets/kaebauk-logo.png" alt="Furak Logo" class="h-7 sm:h-8 w-auto"/>
+<img src="assets/kaebauk-logo-removebg-preview.png" alt="Furak Logo" class="h-7 sm:h-8 w-auto"/>
 <h2 class="text-charcoal dark:text-white text-lg sm:text-xl font-bold leading-tight tracking-tight">Furak</h2>
 </a>
 <!-- Desktop & Tablet Nav -->
@@ -77,6 +108,7 @@
 <a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="about.html">About</a>
 <a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="culinary.html">Culinary</a>
 <a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="destination.html">Tourism</a>
+<a class="text-charcoal dark:text-gray-200 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors px-2 py-1" href="cultura.html">Cultural</a>
 </div>
 <!-- Mobile & Tablet Menu Button -->
 <button id="menu-toggle" class="lg:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
@@ -91,6 +123,7 @@
 <a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="about.html">About</a>
 <a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="culinary.html">Culinary</a>
 <a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="destination.html">Tourism</a>
+<a class="block text-charcoal dark:text-gray-200 text-base font-medium hover:text-primary dark:hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50" href="cultura.html">Cultural</a>
 </div>
 </div>
 </header>
@@ -138,7 +171,7 @@
 <div class="mx-auto max-w-[1280px]">
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 <!-- Card 1: Saboko -->
-<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer" onclick="openModal('saboko')">
 <div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
 <div class="absolute top-3 left-3 z-10 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Chef's Choice</div>
 <img alt="Saboko fish grilled in palm leaves" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5yCRqAmpJBxUlhhHnUcGQ99R8bOdrHpdbDX5Z4yBPOs56-BIXGNIt5E8hm2nPxest9Pfy5l9BC8j4NRib0Sm6FRQ8mVyUthgqq4ICAHZOdutNgESNE4myrhd6ZaBNTnnGz5-7vpPUpuJqR_oJmFkuvuoDsOxi8Z9PKFnU4uTlVMsNMtdqAyg7-ux2ZAcv7HWd5wHJcg4IknEUwNNCUkoz9SDVgZaqLetR4-2_n0bp88nN5G1RzNxyItQeF13uv2LJtAYZEAZtE3v"/>
@@ -161,7 +194,7 @@
 </div>
 </div>
 <!-- Card 2: Tukir -->
-<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer" onclick="openModal('tukir')">
 <div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
 <img alt="Tukir meat cooked in bamboo" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/tukir.jpg"/>
 </div>
@@ -181,7 +214,7 @@
 </div>
 </div>
 <!-- Card 3: Batar Da'an -->
-<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer" onclick="openModal('batar')">
 <div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
 <div class="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur-md text-green-700 text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
 <span class="material-symbols-outlined text-[12px]">eco</span> Veg
@@ -204,7 +237,7 @@
 </div>
 </div>
 <!-- Card 4: Ikan Pepes -->
-<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer" onclick="openModal('pepes')">
 <div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
 <div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
@@ -227,7 +260,7 @@
 </div>
 </div>
 <!-- Card 5: Kulu -->
-<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer" onclick="openModal('kulu')">
 <div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
 <div class="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur-md text-pink-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
 <span class="material-symbols-outlined text-[12px]">icecream</span> Sweet
@@ -252,7 +285,7 @@
 </div>
 </div>
 <!-- Card 6: Midar Sin -->
-<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+<div class="group flex flex-col bg-white rounded-[2rem] p-3 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer" onclick="openModal('midar')">
 <div class="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-gray-100">
 <div class="absolute top-3 left-3 z-10 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Popular</div>
 <img alt="Sweet and sour pork dish" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="assets/midar-siin.jpg"/>
@@ -307,6 +340,292 @@
 </div>
 </div>
 </main>
+
+<!-- Modals -->
+<!-- Modal Saboko -->
+<div id="modal-saboko" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5yCRqAmpJBxUlhhHnUcGQ99R8bOdrHpdbDX5Z4yBPOs56-BIXGNIt5E8hm2nPxest9Pfy5l9BC8j4NRib0Sm6FRQ8mVyUthgqq4ICAHZOdutNgESNE4myrhd6ZaBNTnnGz5-7vpPUpuJqR_oJmFkuvuoDsOxi8Z9PKFnU4uTlVMsNMtdqAyg7-ux2ZAcv7HWd5wHJcg4IknEUwNNCUkoz9SDVgZaqLetR4-2_n0bp88nN5G1RzNxyItQeF13uv2LJtAYZEAZtE3v" alt="Saboko" class="w-full h-64 object-cover rounded-t-[2rem]">
+            <button onclick="closeModal('saboko')" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+                <span class="material-symbols-outlined text-neutral-dark">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">Chef's Choice</span>
+                <div class="flex items-center gap-0.5 text-accent text-sm font-bold">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.9
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Saboko</h2>
+            <p class="text-neutral-light mb-6 leading-relaxed">Saboko is a traditional Timorese fish dish cooked using a unique method with palm leaves. Fresh fish is marinated with local spices such as tamarind, turmeric, and chili, then wrapped tightly in palm leaves and grilled over charcoal. This cooking process gives the fish a distinctive aroma and deep flavor.</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Cooking Time</h4>
+                    <p class="text-neutral-light">25 minutes</p>
+                </div>
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Difficulty Level</h4>
+                    <p class="text-neutral-light">Medium</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-neutral-dark mb-3">Main Ingredients:</h4>
+                <ul class="text-neutral-light space-y-1">
+                    <li>• Fresh fish (snapper/grouper)</li>
+                    <li>• Young palm leaves</li>
+                    <li>• Tamarind</li>
+                    <li>• Turmeric and traditional spices</li>
+                    <li>• Chili and onions</li>
+                </ul>
+            </div>
+            
+            <p class="text-sm text-neutral-light italic">Saboko is not just food, but also a symbol of culinary tradition passed down through generations in Timor-Leste.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Tukir -->
+<div id="modal-tukir" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+            <img src="assets/tukir.jpg" alt="Tukir" class="w-full h-64 object-cover rounded-t-[2rem]">
+            <button onclick="closeModal('tukir')" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+                <span class="material-symbols-outlined text-neutral-dark">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <div class="flex items-center gap-0.5 text-accent text-sm font-bold">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.8
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Tukir</h2>
+            <p class="text-neutral-light mb-6 leading-relaxed">Tukir is a very special ceremonial dish in Timorese culture. Meat that has been marinated with traditional spices is slowly cooked inside bamboo stalks. This unique cooking process gives a distinctive taste and appetizing aroma. Tukir is usually served at important events and traditional celebrations.</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Cooking Time</h4>
+                    <p class="text-neutral-light">4 hours</p>
+                </div>
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Difficulty Level</h4>
+                    <p class="text-neutral-light">Hard</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-neutral-dark mb-3">Main Ingredients:</h4>
+                <ul class="text-neutral-light space-y-1">
+                    <li>• Beef or pork</li>
+                    <li>• Fresh bamboo stalks</li>
+                    <li>• Traditional Timorese spices</li>
+                    <li>• Pandan leaves</li>
+                    <li>• Coconut milk</li>
+                </ul>
+            </div>
+            
+            <p class="text-sm text-neutral-light italic">Tukir symbolizes unity and togetherness in Timorese culinary tradition.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Batar Da'an -->
+<div id="modal-batar" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtTgmHKtafVUxeoGdAQqT6ComyfuWxjvlGwChShTe9vOxgVjUN8ubMzpq9nhgaPXaJzPsPhFLFv9OsGPyQQYjo7tkEj0B5uVvz_qmW05MLyovTlT7pQxTKOUqwwMDHhBJAIoxr1uQEc-a2fjQlUov2WqKsg4AWv2U-J_naDmOkeowJbCbGJPSI0bZbQwmvPad4XM5SBEP06pTBnCdf50fb6EdS0ygwWIyyrToQZYHNJ8f1h7iOoN3Bvw4tQxoub6F_o-gR01JM0Iyi" alt="Batar Da'an" class="w-full h-64 object-cover rounded-t-[2rem]">
+            <button onclick="closeModal('batar')" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+                <span class="material-symbols-outlined text-neutral-dark">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[12px]">eco</span> Vegetarian
+                </span>
+                <div class="flex items-center gap-0.5 text-accent text-sm font-bold">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.7
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Batar Da'an</h2>
+            <p class="text-neutral-light mb-6 leading-relaxed">Batar Da'an is a traditional Timorese dish made from corn, mung beans, and pumpkin. This dish is a very nutritious and filling staple food. Cooked with coconut milk and local spices, Batar Da'an has a savory taste and soft texture. This dish is often served as daily food and also at special events.</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Cooking Time</h4>
+                    <p class="text-neutral-light">45 minutes</p>
+                </div>
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Difficulty Level</h4>
+                    <p class="text-neutral-light">Easy</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-neutral-dark mb-3">Main Ingredients:</h4>
+                <ul class="text-neutral-light space-y-1">
+                    <li>• Corn kernels</li>
+                    <li>• Mung beans</li>
+                    <li>• Yellow pumpkin</li>
+                    <li>• Coconut milk</li>
+                    <li>• Salt and spices</li>
+                </ul>
+            </div>
+            
+            <p class="text-sm text-neutral-light italic">Batar Da'an is a symbol of prosperity and abundance in Timorese culture.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ikan Pepes -->
+<div id="modal-pepes" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKH5nG3HcPJ_3zV-L3oXtEAUDfTENY99-VUiHgx6b-X3aZa3Z3Z8aepqH-0s0ebrCdztJ1gDHpPL4ME3lc8HDcMrOtrJsm29TLjnT4kGlHJNeM6ZU3ACJDSPhfNNo11ASkZqzmHTiMJJ39b3x9k9xF4ZECAQP8KJoR8uP3lIWMs5N6Ul0UlGFrGzRgRzpXK5luedZJZzKdGqkMUYVs_XrsNiQj4Xs_faUmwJ5PyB6eMDQzFqdQ4oWaRm3GSUa-W0y2gcW0JY_tdge9" alt="Ikan Pepes" class="w-full h-64 object-cover rounded-t-[2rem]">
+            <button onclick="closeModal('pepes')" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+                <span class="material-symbols-outlined text-neutral-dark">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <div class="flex items-center gap-0.5 text-accent text-sm font-bold">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.6
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Ikan Pepes</h2>
+            <p class="text-neutral-light mb-6 leading-relaxed">Ikan Pepes is a fish dish seasoned with distinctive Timorese spices, then wrapped tightly in banana leaves and steamed. This cooking process locks all the aroma and flavor of the spices into the fish meat, resulting in a very delicious and fragrant dish. Banana leaves give a distinctive natural aroma to this dish.</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Cooking Time</h4>
+                    <p class="text-neutral-light">30 minutes</p>
+                </div>
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Difficulty Level</h4>
+                    <p class="text-neutral-light">Medium</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-neutral-dark mb-3">Main Ingredients:</h4>
+                <ul class="text-neutral-light space-y-1">
+                    <li>• Fresh fish (tilapia/carp)</li>
+                    <li>• Banana leaves</li>
+                    <li>• Traditional pepes spices</li>
+                    <li>• Chili and onions</li>
+                    <li>• Aromatic spices</li>
+                </ul>
+            </div>
+            
+            <p class="text-sm text-neutral-light italic">Ikan Pepes represents local wisdom in processing seafood in a healthy and delicious way.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Kulu -->
+<div id="modal-kulu" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+            <img src="assets/kulu.jpg" alt="Kulu" class="w-full h-64 object-cover rounded-t-[2rem]">
+            <button onclick="closeModal('kulu')" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+                <span class="material-symbols-outlined text-neutral-dark">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-pink-100 text-pink-600 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[12px]">icecream</span> Dessert
+                </span>
+                <div class="flex items-center gap-0.5 text-accent text-sm font-bold">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.5
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Kulu</h2>
+            <p class="text-neutral-light mb-6 leading-relaxed">Kulu is a traditional Timorese dessert made from breadfruit cooked with coconut milk. This sweet dish has a soft texture and creamy taste. Kulu is often served as a snack or dessert at family gatherings and traditional celebrations. Its naturally sweet taste from breadfruit and coconut milk makes it a favorite for all ages.</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Cooking Time</h4>
+                    <p class="text-neutral-light">15 minutes</p>
+                </div>
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Difficulty Level</h4>
+                    <p class="text-neutral-light">Easy</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-neutral-dark mb-3">Main Ingredients:</h4>
+                <ul class="text-neutral-light space-y-1">
+                    <li>• Ripe breadfruit</li>
+                    <li>• Thick coconut milk</li>
+                    <li>• Palm sugar</li>
+                    <li>• Salt to taste</li>
+                    <li>• Pandan leaves</li>
+                </ul>
+            </div>
+            
+            <p class="text-sm text-neutral-light italic">Kulu is a symbol of tenderness and warmth in Timorese culinary tradition.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Midar Sin -->
+<div id="modal-midar" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+            <img src="assets/midar-siin.jpg" alt="Midar Sin" class="w-full h-64 object-cover rounded-t-[2rem]">
+            <button onclick="closeModal('midar')" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+                <span class="material-symbols-outlined text-neutral-dark">close</span>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">Popular</span>
+                <div class="flex items-center gap-0.5 text-accent text-sm font-bold">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    4.8
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Midar Sin</h2>
+            <p class="text-neutral-light mb-6 leading-relaxed">Midar Sin is a distinctive Timorese sweet and sour pork dish that uses local fruits to provide a fresh sour taste. The pork is cut into small pieces and cooked with traditional spices, then tropical fruits are added to give a unique flavor. This dish is popular at celebrations and is a favorite among locals.</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Cooking Time</h4>
+                    <p class="text-neutral-light">35 minutes</p>
+                </div>
+                <div class="bg-background-light rounded-xl p-4">
+                    <h4 class="font-bold text-neutral-dark mb-2">Difficulty Level</h4>
+                    <p class="text-neutral-light">Medium</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-bold text-neutral-dark mb-3">Main Ingredients:</h4>
+                <ul class="text-neutral-light space-y-1">
+                    <li>• Fresh pork</li>
+                    <li>• Local tropical fruits</li>
+                    <li>• Sweet and sour seasoning</li>
+                    <li>• Chili and onions</li>
+                    <li>• Traditional spices</li>
+                </ul>
+            </div>
+            
+            <p class="text-sm text-neutral-light italic">Midar Sin reflects Timorese culinary creativity in combining sweet and sour flavors.</p>
+        </div>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer class="border-t border-gray-200 bg-white px-6 py-12 lg:px-40">
 <div class="mx-auto max-w-[1280px] flex flex-col items-center gap-8">
@@ -366,6 +685,56 @@
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isMenuOpen) {
             toggleMenu();
+        }
+    });
+    
+    // Modal functions
+    function openModal(modalId) {
+        const modal = document.getElementById('modal-' + modalId);
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            const modalContent = modal.querySelector('div > div');
+            modalContent.classList.add('modal-enter');
+            document.body.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                modalContent.classList.remove('modal-enter');
+            }, 300);
+        }
+    }
+    
+    function closeModal(modalId) {
+        const modal = document.getElementById('modal-' + modalId);
+        if (modal) {
+            const modalContent = modal.querySelector('div > div');
+            modalContent.classList.add('modal-exit');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                modalContent.classList.remove('modal-exit');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+    }
+    
+    // Close modal when clicking outside
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
+            const modalId = e.target.id.replace('modal-', '');
+            closeModal(modalId);
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const openModals = document.querySelectorAll('[id^="modal-"]:not(.hidden)');
+            openModals.forEach(modal => {
+                const modalId = modal.id.replace('modal-', '');
+                closeModal(modalId);
+            });
         }
     });
 </script>
